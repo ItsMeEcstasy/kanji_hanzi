@@ -6,8 +6,6 @@ str_bytes = file.read() #read file as bytes (encoding is unknown)
 pattern = b'(.PNG(.*?)IEND)' #create regex pattern of (wildcard)PNG(wildcards up to first found IEND)IEND
 img_strings = re.findall(pattern, str_bytes, re.DOTALL) #get the resulting bytes for each image, including newlines
 
-sample_num = 1
-
 if not os.path.exists("./images/"): #create images directory if it doesn't already exist
     os.makedirs("./images/")
 
